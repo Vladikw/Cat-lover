@@ -1,0 +1,120 @@
+body {
+    font-family: Arial;
+    max-width: 1000px;
+    margin: auto; /*автоматически подбирая отступы слева и справа*/
+    background: linear-gradient(to bottom, #f5e3c3, #e4c7a1);
+    background-attachment: fixed; /*Фиксирует фон при прокрутке страницы*/
+    color: #4d3319; /* Тёмно-коричневый цвет текста */
+}
+
+header {
+    background: #8b5e3b; /* Глубокий коричневый */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 10px;
+
+}
+
+/*навигация*/
+nav {
+    background: #b88a64; /* Светло-коричневый */
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /*Убирает подчеркивания у ссылок*/
+    margin: 0 10px;
+    font-size: 18px;
+
+}
+
+nav a:hover {
+    background: #a6764e; /* Чуть темнее при наведении */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background: #b88a64;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #a6764e;
+    transform: scale(1.05);
+}
+
+table {
+    margin: 25px auto;
+    width: 100%;
+}
+
+
+.back-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link a {
+    color: #4d3319;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+    color: #2e1e0f;
+    text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff5e6;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #d2a679;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f2e6d9;
+}
+
+td a {
+    color: #8b5e3b;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+td a:hover {
+    text-decoration: underline;
+}

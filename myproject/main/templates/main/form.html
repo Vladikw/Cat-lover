@@ -1,0 +1,58 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Форма регистрации{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Форма регистрации</h2>
+
+
+    <form method="post" action="{% url 'form' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            <!-- Отображаем поля формы пользователя -->
+            {% for field in user_form %}
+            <tr>
+                <td>{{ field.label }}</td>
+                <td>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div>
+                        {% for error in field.errors %}
+                        <small>{{ error }}</small><br>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+
+            <!-- Отображаем поля формы фотографии -->
+            {% for field in photo_form %}
+            <tr>
+                <td>{{ field.label }}</td>
+                <td>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div>
+                        {% for error in field.errors %}
+                        <small>{{ error }}</small><br>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+
+            <!-- Кнопка отправки формы -->
+            <tr>
+                <td colspan="2" align="right">
+                    <button type="submit">Сохранить</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+{% endblock %}

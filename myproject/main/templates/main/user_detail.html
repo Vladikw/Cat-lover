@@ -1,0 +1,37 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Детали пользователя{% endblock %}
+{% block content %}
+
+<h1>Детали пользователя: {{ user.name }}</h1>
+
+<h2>Информация о пользователе</h2>
+<ul>
+    <li>Логин: {{ user.login }}</li>
+    <li>Имя: {{ user.name }}</li>
+    <li>Email: {{ user.email }}</li>
+    <li>Телефон: {{ user.telephone }}</li>
+    <li>Дата регистрации: {{ user.date_create }}</li>
+</ul>
+
+<h2>Права пользователя</h2>
+<ul>
+    {% for right in rights %}
+    <li>{{ right }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Фотографии</h2>
+<div>
+    {% for photo in photos %}
+    <img src="{{ photo.photo.url }}" alt="Фото пользователя" width="200">
+    {% empty %}
+    <p>Нет фотографий</p>
+    {% endfor %}
+</div>
+
+<p class="back-link">
+    <a href="{% url 'users_list' %}">← Назад к списку пользователей</a>
+</p>
+
+{% endblock %}

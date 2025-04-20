@@ -1,0 +1,35 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+
+    <!-- Выводим сообщения об успешной регистрации или ошибках -->
+    {% if messages %}
+        <div class="alert alert-info" role="alert">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <h2>Случайный котёнок 🐾</h2>
+
+    {% if cat_image %}
+        <img src="{% static cat_image %}" alt="Random Cat">
+
+    {% else %}
+        <p>Нет доступных котят 😿</p>
+    {% endif %}
+
+    <p>Хочешь увидеть ещё одного пушистика? Нажми на кнопку ниже! 👇</p>
+
+    <form method="get">
+        <button type="submit">Показать другого котёнка</button>
+    </form>
+
+
+
+{% endblock %}

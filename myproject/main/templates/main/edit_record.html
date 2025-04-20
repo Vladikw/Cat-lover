@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Редактирование пользователя{% endblock %}
+{% block content %}
+<h1>Редактирование пользователя</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <h2>Данные пользователя</h2>
+    {{ user_form.as_p }}
+
+    <h2>Фотография</h2>
+    {{ photo_form.as_p }}
+
+    <button type="submit">Сохранить изменения</button>
+</form>
+
+<h3>Текущие фотографии</h3>
+{% if user.userphoto_set.exists %}
+<img src="{{ user.userphoto_set.first.photo.url }}" alt="Фото пользователя">
+{% else %}
+<p>Нет фотографий.</p>
+{% endif %}
+
+<p class="back-link">
+    <a href="{% url 'users_list' %}">← Назад к списку пользователей</a>
+</p>
+
+
+{% endblock %}
