@@ -26,10 +26,12 @@
             <a href="{% url 'user_detail' user.id %}">Подробнее</a> |
             <a href="{% url 'edit_record' user.id %}">Изменить</a> |
 
-            <a href="{% url 'delete_user' user.id %}"
-               onclick="return confirm('Вы уверены, что хотите удалить пользователя {{ user.name }}?');">
+
+            <a href="{% url 'delete_user' user.id %}" class="delete-user" data-username="{{ user.name }}">
                 Удалить
             </a>
+
+
 
 
         </td>
@@ -37,6 +39,16 @@
     {% endfor %}
     </tbody>
 </table>
+
+<div id="confirmModal" style="display: none;" class="modal">
+    <div class="modal-content">
+        <p id="modalText"></p>
+        <div style="text-align: right; margin-top: 15px;">
+            <button id="confirmDelete">Удалить</button>
+            <button id="cancelDelete">Отмена</button>
+        </div>
+    </div>
+</div>
 
 
 <p>w</p>><p>w</p>><p>w</p><p>w</p>><p>w</p>><p>w</p>><p>w</p>><p>w</p>><p>w</p>><p>w</p>><p>w</p>><p>w</p>><p>w</p>><p>
