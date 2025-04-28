@@ -15,7 +15,6 @@ class RegisterUserForm(forms.ModelForm):
         label='Пароль',
         max_length=24,
         widget=forms.PasswordInput(attrs={
-            'class': 'form-control',
             'placeholder': 'Введите пароль'
         }),
     )
@@ -23,7 +22,6 @@ class RegisterUserForm(forms.ModelForm):
         label='Подтверждение пароля',
         max_length=24,
         widget=forms.PasswordInput(attrs={
-            'class': 'form-control',
             'placeholder': 'Повторите пароль'
         }),
         help_text='Введите тот же пароль ещё раз для подтверждения.',
@@ -40,11 +38,11 @@ class RegisterUserForm(forms.ModelForm):
             'telephone': 'Телефон',
         }
         widgets = {
-            'login': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите логин'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Введите email'}),
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите имя'}),
-            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите адрес'}),
-            'telephone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите телефон'}),
+            'login': forms.TextInput(attrs={'placeholder': 'Введите логин'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Введите email'}),
+            'name': forms.TextInput(attrs={'placeholder': 'Введите имя'}),
+            'address': forms.TextInput(attrs={'placeholder': 'Введите адрес'}),
+            'telephone': forms.TextInput(),
         }
 
     def clean_password2(self):
@@ -74,5 +72,5 @@ class RegisterUserPhotoForm(forms.ModelForm):
             'photo': 'Фотография',
         }
         widgets = {
-            'photo': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),
+            'photo': forms.ClearableFileInput(attrs={}),
         }

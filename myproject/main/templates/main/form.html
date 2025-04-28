@@ -17,6 +17,10 @@
                 <td>{{ field.label }}</td>
                 <td>
                     {{ field }}
+                    {% if field.name == 'password' or field.name == 'password1' or field.name == 'password2' %}
+                    <button type="button" class="password-toggle" data-target="{{ field.name }}"></button>
+                    {% endif %}
+
                     {% if field.errors %}
                     <div>
                         {% for error in field.errors %}
@@ -26,7 +30,9 @@
                     {% endif %}
                 </td>
             </tr>
+
             {% endfor %}
+
 
             <!-- Отображаем поля формы фотографии -->
             {% for field in photo_form %}
